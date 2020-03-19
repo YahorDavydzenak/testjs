@@ -32,10 +32,10 @@ gulp.task('watch', function() {
 
 gulp.task('html', () => {
   return gulp
-    .src('src/*.html')
+    .src('./src/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('./public'))
-    .pipe(connect.reload());
+    // .pipe(connect.reload());
 });
 
 gulp.task('default', gulp.parallel(['server', 'watch']));
