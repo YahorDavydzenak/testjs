@@ -18,7 +18,7 @@ gulp.task('say-hello', function(done) {
 
 gulp.task('uglify', function() {
   return gulp
-    .src('./src/js/**/*.js')
+    .src('./src/js/*.js')
     .pipe(babel())
     .pipe(uglify())
     .pipe(gulp.dest('./public/js'))
@@ -26,8 +26,8 @@ gulp.task('uglify', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./src/**/*.js', gulp.series('uglify'));
-  gulp.watch('./src/**/*.html', gulp.series('html'));
+  gulp.watch('./src/*.js', gulp.series('uglify'));
+  gulp.watch('./src/*.html', gulp.series('html'));
 });
 
 gulp.task('html', () => {
